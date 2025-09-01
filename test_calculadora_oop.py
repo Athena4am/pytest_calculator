@@ -87,3 +87,46 @@ def test_resta_listas_oop():
     calc = calculadora()
     with pytest.raises(TypeError):
         calc.resta(5, [])
+
+
+# test para multiplicacion
+def test_multiplicar_oop():
+    calc = calculadora()
+    calc.multiplicacion(5, 5)
+    assert calc.resultado == 25
+
+
+def test_multiplicar_cero_oop():
+    calc = calculadora()
+    calc.multiplicacion(5, 0)
+    assert calc.resultado == 0
+
+
+def test_multiplicar_negativos_oop():
+    calc = calculadora()
+    calc.multiplicacion(-5, -5)
+    assert calc.resultado == 25
+
+
+def test_multiplicar_positivos_negativos_oop():
+    calc = calculadora()
+    calc.multiplicacion(5, -5)
+    assert calc.resultado == -25
+
+
+def test_multiplicar_decimales_oop():
+    calc = calculadora()
+    calc.multiplicacion(5.25, 5.25)
+    assert calc.resultado == 27.5625
+
+
+def test_multiplicar_string_oop():
+    calc = calculadora()
+    with pytest.raises(TypeError):
+        calc.multiplicacion(5, "Hola")
+
+
+def test_multiplicar_lista_oop():
+    calc = calculadora()
+    with pytest.raises(TypeError):
+        calc.multiplicacion(5, [])
