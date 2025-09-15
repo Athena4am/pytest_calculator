@@ -130,3 +130,4 @@ def test_multiplicar_lista_oop():
     calc = calculadora()
     with pytest.raises(TypeError):
         calc.multiplicacion(5, [])
+# nuevo test
